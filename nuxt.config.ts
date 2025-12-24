@@ -41,6 +41,11 @@ export default defineNuxtConfig({
     '@/assets/css/components.css',
     '@/assets/css/typography.css',
   ],
+  routeRules: {
+    '/': { prerender: true },
+    '/about': { prerender: true },
+    '/contact': { prerender: true },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
