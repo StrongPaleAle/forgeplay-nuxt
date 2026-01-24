@@ -32,7 +32,6 @@ export default defineNuxtConfig({
    '@nuxt/fonts',
    '@nuxt/image',
    'motion-v/nuxt',
-   'shadcn-nuxt',
    'nuxt-seo-utils',
    '@netlify/nuxt',
   ],
@@ -81,16 +80,5 @@ export default defineNuxtConfig({
   site: {
     url: 'https://forgeplay.studio/',
     name: 'ForgePlay Studio'
-  },
-  shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
-    prefix: 'sc',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
-    componentDir: './app/components/ui'
-  },
+  }
 })
