@@ -29,7 +29,7 @@
         <li><NuxtLink to="/games">Games</NuxtLink></li>
         <li><NuxtLink to="/about">About Us</NuxtLink></li>
         <li><NuxtLink to="/contact">Contact</NuxtLink></li>
-        <li><NuxtLink to="/join-the-test">Join the Test</NuxtLink></li>
+        <li><NuxtLink to="/join-us">Join us</NuxtLink></li>
       </ul>
       <NuxtLink class="footer-logo wrapper-grid" to="/">
         <AppLogo />

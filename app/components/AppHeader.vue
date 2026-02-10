@@ -19,7 +19,7 @@
             <li><NuxtLink to="/games">Games</NuxtLink></li>
             <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/contact">Contact</NuxtLink></li>
-            <li><NuxtLink class="btn responsive" to="/join-the-test">Join the Test</NuxtLink></li>
+            <li><NuxtLink class="btn responsive" to="/join-us">Join us</NuxtLink></li>
           </ul>
           
           <ul>
