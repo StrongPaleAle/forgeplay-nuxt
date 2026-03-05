@@ -2,5 +2,6 @@
   "scss.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

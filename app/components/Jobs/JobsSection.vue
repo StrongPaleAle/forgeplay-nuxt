@@ -1,0 +1,72 @@
+<script lang="ts" setup>
+  const { data } = await useAsyncData("jobs", () => {
+    return queryCollection("job")
+      .select(
+        "title",
+        "path",
+        "job_id",
+        "expiration_date",
+        "creation_date",
+        "job_title",
+        "location",
+        "budget",
+        "location_type",
+        "employment_type",
+        "department",
+      )
+      .all();
+  });
+</script>
+
+<template>
+  <section>
+    <SvgNoiseBg />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-10 pb-10 relative items-start"
+    >
+      <BaseCopyBlock
+        kicker="Join us"
+        title="Our latest job openings"
+        class="md:sticky top-8 z-10"
+      >
+        <p class="sm:text-lg mb-6">
+          We believe that video games can be much more than just entertainment!
+          <br />For this reason, we want to transform them into an opportunity
+          to make people think, learn and grow.
+        </p>
+      </BaseCopyBlock>
+
+      <div class="grid grid-cols-1 gap-10 xl:gap-16">
+        <div v-for="job in data" :key="job.job_id">
+          <div class="card">
+            <div>
+              <BaseCopyBlock
+                :kicker="job.department"
+                :title="job.title"
+                cta-label="See details"
+                :cta-url="job.path"
+              >
+                <p class="mb-10">
+                  {{ job.location }} | {{ job.employment_type }} |
+                  {{ job.location_type }}
+                </p>
+              </BaseCopyBlock>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+  section {
+    position: relative;
+    isolation: isolate;
+    background-image: radial-gradient(
+      circle 30vw at 70% 40%,
+      --alpha(var(--color-orange) / 40%),
+      transparent
+    );
+  }
+</style>

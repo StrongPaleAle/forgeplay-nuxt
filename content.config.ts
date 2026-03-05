@@ -71,7 +71,23 @@ export default defineContentConfig({
         })).default([])
 
       })
-    })
+    }),
+    job: defineCollection({
+      type: 'page',
+      source: {include: 'join-us/*.md', exclude: ['join-us/index.md']},
+      schema: z.object({
+        job_title: z.string(),
+        job_id: z.string(),
+        creation_date: z.date().optional(),
+        expiration_date: z.date().optional(),
+        location: z.string().optional(),
+        location_type: z.enum(['onsite', 'remote', 'hybrid']).default('remote'),
+        employment_type: z.enum(['full-time', 'part-time', 'contract', 'internship']).default('full-time'),
+        level: z.array(z.enum(['training', 'entry', 'mid', 'senior', 'lead'])).default(['mid']),
+        department: z.string().optional(),
+        budget: z.string().optional(),
+      })
+    }),
     
   }
 })
