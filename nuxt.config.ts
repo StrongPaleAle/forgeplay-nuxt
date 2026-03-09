@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
-      tailwindcss(),
+      // @ts-expect-error - Tailwind CSS plugin for Vite
+      tailwindcss(), 
     ],
   },
  fonts: {
@@ -31,9 +32,9 @@ export default defineNuxtConfig({
    '@nuxt/eslint',
    '@nuxt/fonts',
    '@nuxt/image',
-   'motion-v/nuxt',
    'nuxt-seo-utils',
    '@netlify/nuxt',
+   '@nuxt/icon'
   ],
   css: [
     '@/assets/css/main.css',
@@ -44,6 +45,13 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/about': { prerender: true },
     '/contact': { prerender: true },
+  },
+  icon: {
+    mode: 'css',
+    cssLayer: 'base',
+    serverBundle: {
+      collections: ['pixelarticons']
+    }
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },

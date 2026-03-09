@@ -9,6 +9,7 @@
         "creation_date",
         "job_title",
         "location",
+        "contract_type",
         "budget",
         "location_type",
         "employment_type",
@@ -38,21 +39,7 @@
 
       <div class="grid grid-cols-1 gap-10 xl:gap-16">
         <div v-for="job in data" :key="job.job_id">
-          <div class="card">
-            <div>
-              <BaseCopyBlock
-                :kicker="job.department"
-                :title="job.title"
-                cta-label="See details"
-                :cta-url="job.path"
-              >
-                <p class="mb-10">
-                  {{ job.location }} | {{ job.employment_type }} |
-                  {{ job.location_type }}
-                </p>
-              </BaseCopyBlock>
-            </div>
-          </div>
+          <JobsCard :job="job" />
         </div>
       </div>
     </div>
@@ -68,5 +55,15 @@
       --alpha(var(--color-orange) / 40%),
       transparent
     );
+  }
+  .card {
+    :deep(.copy-block) {
+      .copy-block__content {
+        @apply text-right;
+        .btn {
+          @apply ml-auto text-right;
+        }
+      }
+    }
   }
 </style>

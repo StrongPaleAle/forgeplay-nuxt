@@ -83,6 +83,7 @@ export default defineContentConfig({
         location: z.string().optional(),
         location_type: z.enum(['onsite', 'remote', 'hybrid']).default('remote'),
         employment_type: z.enum(['full-time', 'part-time', 'contract', 'internship']).default('full-time'),
+        contract_type: z.enum(['permanent', 'fixed-term', 'temporary']).default('permanent'),
         level: z.array(z.enum(['training', 'entry', 'mid', 'senior', 'lead'])).default(['mid']),
         department: z.string().optional(),
         budget: z.string().optional(),
