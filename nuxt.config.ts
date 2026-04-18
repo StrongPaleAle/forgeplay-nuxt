@@ -2,6 +2,13 @@
 import tailwindcss from "@tailwindcss/vite"
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  nitro: {
+    devStorage: {
+      cache: {
+        driver: 'memory' /* in-memory storage for development */,
+      }
+    }
+  },
   devtools: { enabled: true },
   image: {
     provider: 'netlify',
@@ -13,7 +20,7 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [
-      // @ts-expect-error - Tailwind CSS plugin for Vite
+      
       tailwindcss(), 
     ],
   },
@@ -45,6 +52,7 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/about': { prerender: true },
     '/contact': { prerender: true },
+    '/privacy-policy': { prerender: true },
   },
   icon: {
     mode: 'css',
