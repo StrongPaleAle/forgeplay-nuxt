@@ -17,5 +17,5 @@
 ## considerations
 
 - security - ensure that user data is protected and that the application is secure against common vulnerabilities such as cross-site scripting (XSS) and SQL injection.
-- use clouflare workers and d1 + auth0 or self-hosted supabase instance for authentication and database management?
-- should we use an r2 bucket or nextcloud for file storage? or just use the filesystem for now and migrate to a cloud storage solution later?
+- use Cloudflare workers and d1 + auth0 or self-hosted supabase instance for authentication and database management?
+- should we use an r2 bucket or a self-hosted solution for file storage? or just use the filesystem for now and migrate to a cloud storage solution later?

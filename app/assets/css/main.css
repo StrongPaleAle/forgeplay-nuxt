@@ -2,6 +2,11 @@
 @import "tw-animate-css";
 @plugin '@tailwindcss/typography';
 
+@source "../../components/**/*";
+@source "../../layouts/**/*";
+@source "../../pages/**/*";
+@source "../../content/**/*";
+
 @custom-variant dark (&:is(.dark *));
 
 /* :root {
@@ -140,6 +145,28 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
   --text-stroke-width: clamp(1px, var(--dynamic-stroke-width, 0.02em), 5px);
+
+  --animate-marquee: marquee var(--duration) linear infinite reverse;
+
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 @utility text-stroke-* {

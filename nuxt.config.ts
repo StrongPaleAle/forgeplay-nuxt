@@ -1,14 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite"
+import { createResolver } from 'nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  nitro: {
-    devStorage: {
-      cache: {
-        driver: 'memory' /* in-memory storage for development */,
-      }
-    }
-  },
   devtools: { enabled: true },
   image: {
     provider: 'netlify',
@@ -23,6 +20,18 @@ export default defineNuxtConfig({
       
       tailwindcss(), 
     ],
+     optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        '@vueuse/core',
+        'lucide-vue-next',
+        'clsx',
+        'tailwind-merge',
+        'embla-carousel-vue',
+        'embla-carousel-autoplay',
+      ]
+    }
   },
  fonts: {
     defaults: {
@@ -44,10 +53,13 @@ export default defineNuxtConfig({
    '@nuxt/icon'
   ],
   css: [
-    '@/assets/css/main.css',
-    '@/assets/css/components.css',
-    '@/assets/css/typography.css',
+    resolve('./app/assets/css/main.css'),
+    resolve('./app/assets/css/components.css'),
+    resolve('./app/assets/css/typography.css'),
   ],
+  alias: {
+    'assets': resolve('./app/assets'),
+  },
   routeRules: {
     '/': { prerender: true },
     '/about': { prerender: true },

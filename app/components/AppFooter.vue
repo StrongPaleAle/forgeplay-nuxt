@@ -1,25 +1,35 @@
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <footer class="main-footer">
     <nav class="footer-nav">
       <ul class="footer-nav__social full-width">
         <li>
-          <NuxtLink href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer">
+          <NuxtLink
+            href="https://discord.gg/your-discord-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SvgSocial icon-id="discord" />
             <span>Discord</span>
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink href="https://www.instagram.com/forgeplaystudio/" target="_blank" rel="noopener noreferrer">
+          <NuxtLink
+            href="https://www.instagram.com/forgeplaystudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SvgSocial icon-id="instagram" />
             <span>Instagram</span>
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink href="https://forgeplay.itch.io/" target="_blank" rel="noopener noreferrer">
+          <NuxtLink
+            href="https://forgeplay.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SvgSocial icon-id="itch" />
             <span>itch.io</span>
           </NuxtLink>
@@ -38,31 +48,31 @@
         <p>
           <span>&copy; {{ new Date().getFullYear() }} ForgePlay Studio</span>
           <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
-          
         </p>
         <p>
-          Made with ❤️ by 
+          Made with ❤️ by
           <span>
-            <NuxtLink to="https://readthefmanual.it/" external>Laura Paveglio </NuxtLink>(design)
-           & 
-          
-            <NuxtLink to="https://strongale.it" external>StrongAle</NuxtLink> (development)
+            <NuxtLink to="https://readthefmanual.it/" external
+              >Laura Paveglio </NuxtLink
+            >(design) &
+
+            <NuxtLink to="https://strongale.it" external>StrongAle</NuxtLink>
+            (development)
           </span>
         </p>
       </div>
     </nav>
-    
   </footer>
 </template>
 
 <style scoped>
-@reference 'assets/css/main.css';
-.footer-nav{
-  @apply wrapper-grid;
-  ul{
-    @apply flex items-center justify-center gap-8 xl:gap-10;
-    &.footer-nav__social {
-      @apply xl:gap-28 bg-yellow text-background sm:text-transparent sm:text-stroke-background sm:text-stroke-[2px] text-xl sm:text-3xl lg:text-[2.5rem] font-bold py-10 mb-16;
+  @reference 'assets/css/main.css';
+  .footer-nav {
+    @apply wrapper-grid;
+    ul {
+      @apply flex items-center justify-center gap-8 xl:gap-10;
+      &.footer-nav__social {
+        @apply xl:gap-28 bg-yellow text-background sm:text-transparent sm:text-stroke-background sm:text-stroke-0.5 text-xl sm:text-3xl lg:text-[2.5rem] font-bold py-10 mb-16;
 
         a {
           @apply flex items-center gap-2 hover:text-background transition-colors duration-200 max-md:flex-col;
@@ -70,42 +80,35 @@
             @apply w-10 h-10 text-background;
           }
         }
-      
-    }
-    &.footer-nav__links {
-      @apply text-lg mb-10 max-sm:hidden;
-      li {
-       
-        a {
-          @apply hover:text-orange transition-colors duration-200;
+      }
+      &.footer-nav__links {
+        @apply text-lg mb-10 max-sm:hidden;
+        li {
+          a {
+            @apply hover:text-orange transition-colors duration-200;
+          }
         }
       }
     }
-    
-  }
-  .footer-bottom{
-    @apply flex justify-between items-center py-12 max-lg:pb-32 max-lg:flex-col gap-4 max-lg:text-center max-sm:text-sm;
-    
+    .footer-bottom {
+      @apply flex justify-between items-center py-12 max-lg:pb-32 max-lg:flex-col gap-4 max-lg:text-center max-sm:text-sm;
+
       a {
         @apply hover:text-orange transition-colors duration-200 underline;
       }
-      p:first-child{
+      p:first-child {
         span {
-        @apply inline-block pr-4 mr-4 border-r border-foreground;
-      }
+          @apply inline-block pr-4 mr-4 border-r border-foreground;
+        }
       }
       p:last-child {
         span {
           @apply max-sm:block;
-          
         }
       }
-      
-    
+    }
+    .footer-logo {
+      @apply pb-20 border-b-2 border-foreground text-foreground;
+    }
   }
-  .footer-logo {
-    @apply pb-20 border-b-2 border-foreground text-foreground;
-  }
-}
-
 </style>
